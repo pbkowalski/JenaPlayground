@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/pawel/ontologies/2017/9/traffic#"
+     xml:base="http://www.semanticweb.org/pawel/ontologies/2017/9/traffic"
+     xmlns:trafficuntitled-ontology-7="http://www.semanticweb.org/pawel/ontologies/2017/9/trafficuntitled-ontology-7#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:roads="http://www.semanticweb.org/pawel/ontologies/2017/9/roads#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:roads1="http://hetinffusion/ontologies/roads#">
+    <owl:Ontology rdf:about="http://hetinffusion/ontologies/roads"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#connectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#connectedBy">
+        <owl:inverseOf rdf:resource="http://hetinffusion/ontologies/roads#connects"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#connects -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#connects">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#consistsOf -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#consistsOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://hetinffusion/ontologies/roads#isPartOf"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/roads#road"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/roads#bridge"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/roads#road_section"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/roads#road_tunnel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#isPartOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#linksWith -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#linksWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#locatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://hetinffusion/ontologies/roads#locationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/roads#architectural_structure"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/roads#natural_place"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#locationOf -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#locationOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#architectural_structure -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#architectural_structure">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#area -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#area">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#body_of_water -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#body_of_water">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#natural_place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#bridge -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#bridge">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#country -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#country">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#county -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#county">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+        <owl:disjointWith rdf:resource="http://hetinffusion/ontologies/roads#municipality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#infrastructure -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#infrastructure">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#architectural_structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#mountain -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#mountain">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#natural_place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#municipality -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#municipality">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#natural_place -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#natural_place">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#place -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#place"/>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#river -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#river">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#body_of_water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#road -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#road">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#road_section -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#road_section">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#road_tunnel -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#road_tunnel">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#traffic_infrastructure -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#traffic_infrastructure">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#valley -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#valley">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#natural_place"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#A -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#A">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#county"/>
+        <roads1:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#ABXYZ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#ABXYZ -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#ABXYZ">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#B -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#B">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#county"/>
+        <roads1:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#ABXYZ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road1 -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road1">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#road"/>
+        <roads1:consistsOf rdf:resource="http://hetinffusion/ontologies/roads#Road1Tunnel"/>
+        <roads1:consistsOf rdf:resource="http://hetinffusion/ontologies/roads#Road1Y_Tunnel"/>
+        <roads1:consistsOf rdf:resource="http://hetinffusion/ontologies/roads#Road1Z_Tunnel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road1Tunnel -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road1Tunnel">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#road_tunnel"/>
+        <roads1:linksWith rdf:resource="http://hetinffusion/ontologies/roads#Road1Y_Tunnel"/>
+        <roads1:linksWith rdf:resource="http://hetinffusion/ontologies/roads#Road1Z_Tunnel"/>
+        <roads1:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road1Y_Tunnel -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road1Y_Tunnel">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#road_section"/>
+        <roads1:connects rdf:resource="http://hetinffusion/ontologies/roads#Y"/>
+        <roads1:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road1Z_Tunnel -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road1Z_Tunnel">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#road_section"/>
+        <roads1:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road2 -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road2"/>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road2Bridge -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road2Bridge">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#bridge"/>
+        <roads1:connects rdf:resource="http://hetinffusion/ontologies/roads#X"/>
+        <roads1:connects rdf:resource="http://hetinffusion/ontologies/roads#Y"/>
+        <roads1:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#X -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#X">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#municipality"/>
+        <roads1:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Y -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Y">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#municipality"/>
+        <roads1:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Z -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Z">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#municipality"/>
+        <roads1:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://hetinffusion/ontologies/roads#body_of_water"/>
+            <rdf:Description rdf:about="http://hetinffusion/ontologies/roads#mountain"/>
+            <rdf:Description rdf:about="http://hetinffusion/ontologies/roads#valley"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

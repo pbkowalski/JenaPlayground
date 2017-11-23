@@ -1,0 +1,738 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://hetinffusion/ontologies/joint#"
+     xml:base="http://hetinffusion/ontologies/joint"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:roads="http://hetinffusion/ontologies/roads#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:threat="http://hetinffusion/ontologies/threat#"
+     xmlns:belief="http://hetinffusion/ontologies/belief#"
+     xmlns:anomalies="http://hetinffusion/ontologies/anomalies#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://hetinffusion/ontologies/joint"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#associatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/anomalies#associatedWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#flaggedBy -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/anomalies#flaggedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/anomalies#anomaly"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/anomalies#analytics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#hasSensor -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/anomalies#hasSensor">
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/anomalies#place"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/anomalies#sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#locatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/anomalies#locatedAt">
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/anomalies#sensor"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/anomalies#place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/belief#DS_model -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/belief#DS_model">
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/belief#DS_concept"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/belief#Uncertain_concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/belief#DS_relation -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/belief#DS_relation">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/belief#DS_concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/belief#is_either -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/belief#is_either">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/belief#Uncertain_concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/belief#source -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/belief#source">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/belief#DS_concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#connectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#connectedBy">
+        <owl:inverseOf rdf:resource="http://hetinffusion/ontologies/roads#connects"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#connects -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#connects">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#consistsOf -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#consistsOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://hetinffusion/ontologies/roads#isPartOf"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/roads#road"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#isPartOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#linksWith -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#linksWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#locatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://hetinffusion/ontologies/roads#locationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/roads#place"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#locationOf -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/roads#locationOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/threat#target -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/threat#target">
+        <owl:inverseOf rdf:resource="http://hetinffusion/ontologies/threat#targetOf"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/threat#Threat"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/threat#Target"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/threat#targetOf -->
+
+    <owl:ObjectProperty rdf:about="http://hetinffusion/ontologies/threat#targetOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/threat#Target"/>
+        <rdfs:range rdf:resource="http://hetinffusion/ontologies/threat#Threat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#endTime -->
+
+    <owl:DatatypeProperty rdf:about="http://hetinffusion/ontologies/anomalies#endTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/anomalies#anomaly"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#sensorType -->
+
+    <owl:DatatypeProperty rdf:about="http://hetinffusion/ontologies/anomalies#sensorType">
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/anomalies#sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#startTime -->
+
+    <owl:DatatypeProperty rdf:about="http://hetinffusion/ontologies/anomalies#startTime">
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/anomalies#anomaly"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/belief#mass -->
+
+    <owl:DatatypeProperty rdf:about="http://hetinffusion/ontologies/belief#mass">
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/belief#DS_concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/threat#Capability -->
+
+    <owl:DatatypeProperty rdf:about="http://hetinffusion/ontologies/threat#Capability">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/threat#Threat"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/threat#Intent -->
+
+    <owl:DatatypeProperty rdf:about="http://hetinffusion/ontologies/threat#Intent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/threat#Threat"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/threat#Opportunity -->
+
+    <owl:DatatypeProperty rdf:about="http://hetinffusion/ontologies/threat#Opportunity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/threat#Threat"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://hetinffusion/ontologies/threat#threatID -->
+
+    <owl:DatatypeProperty rdf:about="http://hetinffusion/ontologies/threat#threatID">
+        <rdfs:domain rdf:resource="http://hetinffusion/ontologies/threat#Threat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#analytics -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/anomalies#analytics"/>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#anomaly -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/anomalies#anomaly"/>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#place -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/anomalies#place">
+        <owl:equivalentClass rdf:resource="http://hetinffusion/ontologies/roads#place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#sensor -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/anomalies#sensor"/>
+    
+
+
+    <!-- http://hetinffusion/ontologies/belief#DS_concept -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/belief#DS_concept"/>
+    
+
+
+    <!-- http://hetinffusion/ontologies/belief#Source -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/belief#Source"/>
+    
+
+
+    <!-- http://hetinffusion/ontologies/belief#Uncertain_concept -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/belief#Uncertain_concept"/>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#architectural_structure -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#architectural_structure">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#area -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#area">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#body_of_water -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#body_of_water">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#natural_place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#bridge -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#bridge">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#country -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#country">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#county -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#county">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+        <owl:disjointWith rdf:resource="http://hetinffusion/ontologies/roads#municipality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#infrastructure -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#infrastructure">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#architectural_structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#mountain -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#mountain">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#natural_place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#municipality -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#municipality">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#area"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#natural_place -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#natural_place">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#place -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#place"/>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#river -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#river">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#body_of_water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#road -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#road">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#road_section -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#road_section">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#road_tunnel -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#road_tunnel">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#traffic_infrastructure -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#traffic_infrastructure">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#infrastructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#valley -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/roads#valley">
+        <rdfs:subClassOf rdf:resource="http://hetinffusion/ontologies/roads#natural_place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://hetinffusion/ontologies/threat#Target -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/threat#Target"/>
+    
+
+
+    <!-- http://hetinffusion/ontologies/threat#Threat -->
+
+    <owl:Class rdf:about="http://hetinffusion/ontologies/threat#Threat"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#Road2Bridge -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/anomalies#Road2Bridge">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/anomalies#place"/>
+        <owl:sameAs rdf:resource="http://hetinffusion/ontologies/roads#Road2Bridge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#anomaly1 -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/anomalies#anomaly1">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/anomalies#anomaly"/>
+        <anomalies:associatedWith rdf:resource="http://hetinffusion/ontologies/anomalies#trafficSensorAtBridge_Road2"/>
+        <anomalies:flaggedBy rdf:resource="http://hetinffusion/ontologies/anomalies#k_means_5_clusters"/>
+        <anomalies:endTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-02-16T00:02:21</anomalies:endTime>
+        <anomalies:startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-02-15T23:02:59</anomalies:startTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#k_means_5_clusters -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/anomalies#k_means_5_clusters">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/anomalies#analytics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/anomalies#trafficSensorAtBridge_Road2 -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/anomalies#trafficSensorAtBridge_Road2">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/anomalies#sensor"/>
+        <anomalies:locatedAt rdf:resource="http://hetinffusion/ontologies/anomalies#Road2Bridge"/>
+        <anomalies:sensorType>traffic</anomalies:sensorType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#A -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#A">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#county"/>
+        <roads:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#ABXYZ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#ABXYZ -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#ABXYZ">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#B -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#B">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#county"/>
+        <roads:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#ABXYZ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road1 -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road1">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#road"/>
+        <roads:consistsOf rdf:resource="http://hetinffusion/ontologies/roads#Road1Tunnel"/>
+        <roads:consistsOf rdf:resource="http://hetinffusion/ontologies/roads#Road1Y_Tunnel"/>
+        <roads:consistsOf rdf:resource="http://hetinffusion/ontologies/roads#Road1Z_Tunnel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road1Tunnel -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road1Tunnel">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#road_tunnel"/>
+        <roads:linksWith rdf:resource="http://hetinffusion/ontologies/roads#Road1Y_Tunnel"/>
+        <roads:linksWith rdf:resource="http://hetinffusion/ontologies/roads#Road1Z_Tunnel"/>
+        <roads:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road1Y_Tunnel -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road1Y_Tunnel">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#road_section"/>
+        <roads:connects rdf:resource="http://hetinffusion/ontologies/roads#Y"/>
+        <roads:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road1Z_Tunnel -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road1Z_Tunnel">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#road_section"/>
+        <roads:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Road2Bridge -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Road2Bridge">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#bridge"/>
+        <roads:connects rdf:resource="http://hetinffusion/ontologies/roads#X"/>
+        <roads:connects rdf:resource="http://hetinffusion/ontologies/roads#Y"/>
+        <roads:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#X -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#X">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#municipality"/>
+        <roads:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Y -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Y">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#municipality"/>
+        <roads:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/roads#Z -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/roads#Z">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#municipality"/>
+        <roads:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/threat#Threat1 -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/threat#Threat1">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/threat#Threat"/>
+        <threat:target rdf:resource="http://hetinffusion/ontologies/threat#target1"/>
+        <threat:Capability rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</threat:Capability>
+        <threat:Intent rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</threat:Intent>
+        <threat:threatID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</threat:threatID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/ontologies/threat#target1 -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/ontologies/threat#target1">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/belief#Uncertain_concept"/>
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/roads#traffic_infrastructure"/>
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/threat#Target"/>
+        <belief:source rdf:resource="http://hetinffusion/sources#S1"/>
+        <roads:locatedIn rdf:resource="http://hetinffusion/ontologies/roads#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://hetinffusion/sources#S1 -->
+
+    <owl:NamedIndividual rdf:about="http://hetinffusion/sources#S1">
+        <rdf:type rdf:resource="http://hetinffusion/ontologies/belief#Source"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://hetinffusion/ontologies/roads#body_of_water"/>
+            <rdf:Description rdf:about="http://hetinffusion/ontologies/roads#mountain"/>
+            <rdf:Description rdf:about="http://hetinffusion/ontologies/roads#valley"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://hetinffusion/ontologies/threat" uri="file:/home/pawel/data/Ontologies/threat.owl"/>
+    <uri id="Imports Wizard Entry" name="http://hetinfofusion/ontologies/threat/" uri="file:/home/pawel/data/Ontologies/threat.owl"/>
+    <uri id="Imports Wizard Entry" name="http://hetinffusion/ontologies/roads" uri="file:/home/pawel/data/Ontologies/roads.owl"/>
+    <uri id="Imports Wizard Entry" name="http://hetinffusion/ontologies/belief" uri="belief.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1510064327203" name="http://hetinffusion/ontologies/belief" uri="belief.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1510064327203" name="http://hetinffusion/ontologies/joint" uri="joint.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1510064327203" name="http://hetinfofusion/ontologies/threatroads/" uri="threat_roads.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1510064327203" name="http://www.semanticweb.org/pawel/ontologies/2017/9/anomalies" uri="anomalies.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1510064327203" name="http://www.semanticweb.org/pawel/ontologies/2017/9/traffic" uri="roads.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1510064327203" name="shadowed:http://www.semanticweb.org/pawel/ontologies/2017/9/anomalies" uri="bin/examples/anomalies.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1510064327203" name="shadowed:http://www.semanticweb.org/pawel/ontologies/2017/9/anomalies" uri="src/examples/anomalies.owl"/>
+    </group>
+</catalog>
